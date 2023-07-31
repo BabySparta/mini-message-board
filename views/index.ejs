@@ -7,5 +7,19 @@
   <body>
     <h1><%= title %></h1>
     <p>Your site for all your messaging needs</p>
+    <a href="/new">New Post</a>
+    <% if (messages && messages.length > 0) { %>
+      <ul>
+        <% messages.forEach(message => { %>
+          <li>
+            <p>Name: <%= message.name %></p>
+            <p>Message: <%= message.message %></p>
+            <p>Date: <%= message.date %></p>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>No messages found.</p>
+    <% } %>
   </body>
 </html>
